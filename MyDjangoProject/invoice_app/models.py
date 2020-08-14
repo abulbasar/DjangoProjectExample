@@ -21,3 +21,6 @@ class CustomerModel(models.Model):
     date_modified = models.DateTimeField(auto_now=True, null=True)
     #description = models.TextField(blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
+
+    def __repr__(self):
+        return self.name
