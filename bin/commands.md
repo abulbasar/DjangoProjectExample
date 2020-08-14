@@ -18,6 +18,7 @@ pip install -r requirements.txt
 #2. Create App. One project can have multiple apps
 
 # Create project
+```
 $ django-admin startproject my-django-project
 
 $ tree MyDjangoProject/
@@ -29,10 +30,11 @@ MyDjangoProject/
 │   ├── urls.py
 │   └── wsgi.py
 └── manage.py
-
+```
 
 
 # Create app
+```
 $ cd MyDjangoProject
 $ django-admin startapp invoice_app
 $ tree .
@@ -53,7 +55,7 @@ $ tree .
 │   ├── tests.py
 │   └── views.py
 └── manage.py
-
+```
 
 
 # Run server
