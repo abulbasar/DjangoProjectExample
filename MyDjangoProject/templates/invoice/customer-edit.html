@@ -22,8 +22,14 @@
             </tbody>
         </table>
       {% csrf_token %}
-      <input type="submit" class='btn btn-primary' value="Submit">
+      <input type="submit" class='btn btn-primary' value="Save">
     </form>
-
+    {% if recordId %}
+        <form action="{% url 'delete_customer' recordId %}" method="delete">
+            {% csrf_token %}
+            <input type="hidden" value="{{ form.pk }}" name="pk">
+            <input type="submit" class='btn btn-danger' value="Delete">
+        </form>
+    {% endif %}
 {% endblock %}
 

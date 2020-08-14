@@ -13,7 +13,7 @@
 <!--                This week-->
 <!--              </button>-->
 <!--            </div>-->
-              <button id="createCustomer" class="btn btn-sm btn-primary">Create Customer</button>
+              <a class="btn btn-sm btn-primary" href="/invoice/customer/new">Create Customer</a>
           </div>
 
 
@@ -25,6 +25,7 @@
                   <th>#</th>
                   <th>Name</th>
                   <th>Status</th>
+                  <th>TaxId</th>
                   <th>City</th>
                 </tr>
               </thead>
@@ -36,6 +37,7 @@
                     <a class="" href="{% url 'customer_edit' customer.id %}">{{customer.name}}</a>
                   </td>
                   <td>{{customer.status}}</td>
+                  <td>{{customer.tax_id}}</td>
                   <td>{{customer.city}}</td>
                 </tr>
               {% endfor %}

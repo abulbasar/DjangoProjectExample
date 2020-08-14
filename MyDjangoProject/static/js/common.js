@@ -14,7 +14,7 @@ $( document ).ready(function() {
     }
 
     $("#createCustomer").click(function(){
-        window.location.href = "/invoice/customer-details";
+        window.location.href = "/invoice/customer/new";
     });
 
     $("#createInvoice").click(function(){

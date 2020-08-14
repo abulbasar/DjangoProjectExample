@@ -40,6 +40,15 @@ def customers(request:HttpRequest):
 def customer_details(request:HttpRequest):
     return render(request, "invoice/customer-details.html")
 
+
+def customer_delete(request:HttpRequest, id:int = None):
+
+    record = CustomerModel.objects.get(id = id)
+    record.delete()
+
+    return redirect("/invoice/customers")
+
+
 def customer_edit(request:HttpRequest, id: int = None):
 
     if request.method == "POST":
@@ -53,7 +62,11 @@ def customer_edit(request:HttpRequest, id: int = None):
             form.save(True)
             return redirect("/invoice/customers")
         else:
-            messages.error("Form contains error: " + str(form.errors))
+            #messages.error(request, "Form contains error: " + str(form.errors))
+            return render(request, "invoice/customer-edit.html", context={
+                "form": form,
+                "recordId": id
+            })
     else:
         if id is None:
             form = CustomerForm()
@@ -62,7 +75,8 @@ def customer_edit(request:HttpRequest, id: int = None):
             form = CustomerForm(instance=record)
 
         return render(request, "invoice/customer-edit.html", context={
-            "form":  form
+            "form":  form,
+            "recordId": id
         })
 
 def invoice_details(request:HttpRequest):
