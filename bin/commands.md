@@ -8,19 +8,59 @@ source venv/bin/activate
 # View installed packages
 pip list
 
+pip install django
+
+If cloned git repo)
+pip install -r requirements.txt 
+
 # Steps
 #1. Create Project
 #2. Create App. One project can have multiple apps
 
-
 # Create project
-django-admin startproject invoice_app
+$ django-admin startproject my-django-project
+
+$ tree MyDjangoProject/
+MyDjangoProject/
+├── MyDjangoProject
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+
+
 
 # Create app
-django-admin startproject first_app
+$ cd MyDjangoProject
+$ django-admin startapp invoice_app
+$ tree .
+.
+├── MyDjangoProject
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── invoice_app
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── manage.py
+
+
 
 # Run server
 python manage.py runserver
+
+# create superuser
+python manage.py createsuperuser
 
 # Updates database schema. Manages both apps with migrations and those without.
 python manage.py migrate
@@ -30,8 +70,7 @@ python manage.py migrate
 # Creates new migration(s) for apps.
 python manage.py makemigrations invoice_app
 
-# create superuser
-python manage.py createsuperuser
+
 
 
 # View sql table creation commands
