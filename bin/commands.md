@@ -64,6 +64,7 @@ python manage.py runserver
 
 
 # Updates database schema. Manages both apps with migrations and those without.
+# It will apply model changes to the databases 
 python manage.py migrate
 
 
@@ -71,6 +72,17 @@ python manage.py migrate
 # if your  application does not  support self registration
 
 python manage.py createsuperuser
+
+After this if you go to the database, you can see the tables created.
+$ python manage.py dbshell
+sqlite> .tables
+auth_group                  auth_user_user_permissions
+auth_group_permissions      django_admin_log          
+auth_permission             django_content_type       
+auth_user                   django_migrations         
+auth_user_groups            django_session  
+
+
 
 
 
