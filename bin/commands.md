@@ -83,7 +83,9 @@ auth_user                   django_migrations
 auth_user_groups            django_session  
 
 
-
+Enable Templates
+1. created a directory called templates under project root (the directory that contains manage.py)
+2. Update MyDjangoProject/settings.py to specify templates
 
 
 # https://docs.djangoproject.com/en/3.1/topics/migrations/

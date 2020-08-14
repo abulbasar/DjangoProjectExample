@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Create your views here.
 def home_page(request:HttpRequest):
-    return HttpResponse("<h1>Hello world!</h1>")
+    return render(request, "index.html")
 
 def ping(request:HttpRequest):
     #return HttpResponse("Hello world!")
