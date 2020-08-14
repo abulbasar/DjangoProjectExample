@@ -1,0 +1,29 @@
+<!doctype html>
+{% extends "base-template.html" %}
+{% block body_block%}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+      <h1 class="h2">Customer Details</h1>
+    </div>
+
+        {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            <ul class="messagelist">
+                {% for message in messages %}
+                    <li>{{ message.message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+    <form method="POST">
+        <table>
+            <tbody>
+                {{ form.as_table }}
+            </tbody>
+        </table>
+      {% csrf_token %}
+      <input type="submit" class='btn btn-primary' value="Submit">
+    </form>
+
+{% endblock %}
+
