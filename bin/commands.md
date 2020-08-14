@@ -93,8 +93,6 @@ Enable Templates
 python manage.py makemigrations invoice_app
 
 
-
-
 # View sql table creation commands
 python manage.py sqlmigrate invoice_app 0001
 

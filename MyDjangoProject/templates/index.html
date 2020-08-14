@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Hello world! Abul</h1>
+    <h1>Hello world! ({{department}}). Time now is {{time}}</h1>
+    <small>Current user: {{user.username}} ({{user.email}})</small>
+
+    {% for name in names %}
+        <div>{{name}}</div>
+    {% endfor %}
 </body>
 </html>
