@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from invoice_app import views as invoice_app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', invoice_app_views.home_page, name ="home_page"),
+    path('ping', invoice_app_views.ping, name ="ping")
+
 ]

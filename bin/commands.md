@@ -61,11 +61,17 @@ $ tree .
 # Run server
 python manage.py runserver
 
-# create superuser
-python manage.py createsuperuser
+
 
 # Updates database schema. Manages both apps with migrations and those without.
 python manage.py migrate
+
+
+# create superuser to login to admin page. You can create standard users as well 
+# if your  application does not  support self registration
+
+python manage.py createsuperuser
+
 
 
 # https://docs.djangoproject.com/en/3.1/topics/migrations/
