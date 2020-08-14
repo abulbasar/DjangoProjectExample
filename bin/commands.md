@@ -141,4 +141,4 @@ gunicorn -w 10 DjangoProject.wsgi
 
 Launch 
 pip install gunicorn
-GUNICORN_CMD_ARGS="--bind=0.0.0.0 --workers=3" gunicorn -w 10 MyDjangoProject.wsgi
+GUNICORN_CMD_ARGS="--bind=0.0.0.0 --workers=10" gunicorn MyDjangoProject.wsgi
