@@ -90,8 +90,14 @@ Enable Templates
 
 # https://docs.djangoproject.com/en/3.1/topics/migrations/
 # Creates new migration(s) for apps.
+
+Django identifies the changes in the current model by comparing it 
+history captured in the form of migration steps under invoice_app/migrations
+
 python manage.py makemigrations invoice_app
 
+Django will apply the db migration steps as required
+python manage.py migrate
 
 # View sql table creation commands
 python manage.py sqlmigrate invoice_app 0001

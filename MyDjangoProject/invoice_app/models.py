@@ -19,4 +19,5 @@ class CustomerModel(models.Model):
     country = models.CharField(max_length=25, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     date_modified = models.DateTimeField(auto_now=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    #description = models.TextField(blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
