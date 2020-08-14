@@ -40,12 +40,11 @@
           </p>
         </div>
     <div class="container-fluid">
-        
-        <h1>Hello world! ({{department}}). Time now is {{time}}</h1>
-        <small>Current user: {{user.username}} ({{user.email}})</small>
 
+        <h1>Hello world! ({{department}}). Time now is {{time | date}}</h1>
+        <small>Current user: {{user.username}} ({{user.email | lower}})</small>
         {% for name in names %}
-            <div>{{name}}</div>
+            <div>{{name | upper }}</div>
         {% endfor %}
     </div>
 

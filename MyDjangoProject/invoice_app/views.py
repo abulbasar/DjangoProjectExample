@@ -10,7 +10,7 @@ def home_page(request:HttpRequest):
     context = {
         "names": names,
         "department": department,
-        "time": str(datetime.now())
+        "time": datetime.now()
     }
     return render(request, "index.html", context = context)
 
