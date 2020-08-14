@@ -123,10 +123,14 @@ python manage.py shell -i ipython
 >> models.Customer.objects.get(id = 4)
 >> models.Customer.objects.filter(name = "Abul")
 
+
+from faker import Faker
+fake = Faker()
 for i in range(10):
     r = CustomerModel()
-    r.name = "test customer " + str(i)
-    r.tax_id = "test tax id " + str(i)
+    r.name = fake.name()
+    r.tax_id = fake.ssn()
+    r.email = fake.email()
     r.save()
 
 

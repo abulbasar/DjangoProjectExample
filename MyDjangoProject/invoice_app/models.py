@@ -22,5 +22,8 @@ class CustomerModel(models.Model):
     #description = models.TextField(blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
     def __repr__(self):
         return self.name
